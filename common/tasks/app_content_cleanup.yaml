@@ -1,0 +1,4 @@
+- name: cleanup Old application Content
+  ansible.builtin.file:
+    path: {{app_path}}
+    state: absent

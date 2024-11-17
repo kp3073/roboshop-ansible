@@ -1,0 +1,5 @@
+- name: Download App content from Artifact
+  ansible.builtin.download:
+    src: https://roboshop-artifacts.s3.amazonaws.com/{{component}}.zip
+    dest: "{{ app_path }}"
+    remote_src: yes
