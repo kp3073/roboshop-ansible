@@ -3,7 +3,7 @@
     name: nginx
     state: installed
 
-- name: Create application directiory
+- name: Create application directory
   ansible.builtin.import_role:
     name: common
     task_from: app_content_cleanup
