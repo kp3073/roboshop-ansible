@@ -6,12 +6,12 @@
 - name: Create application directory
   ansible.builtin.import_role:
     name: common
-    task_from: app_content_cleanup
+    tasks_from: app_content_cleanup
 
 - name: Donwload Frontend Content
   ansible.builtin.import_role:
     name: common
-    task_from: download_app_content
+    tasks_from: download_app_content
 
 - name: Copy Nginx configuration
   ansible.builtin.template:
