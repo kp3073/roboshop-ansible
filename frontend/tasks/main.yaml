@@ -1,7 +1,7 @@
 - name: Install Nginx
   ansible.builtin.dnf:
-    - name: nginx
-      state: installed
+    name: nginx
+    state: installed
 
 - name: Create application directiory
   ansible.builtin.import_role:
