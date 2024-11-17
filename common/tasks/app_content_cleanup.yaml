@@ -3,3 +3,8 @@
     path: "{{app_path}}"
     state: absent
 
+
+- name: Create a directory
+  ansible.builtin.file:
+    path: "{{app_path}}"
+    state: directory
