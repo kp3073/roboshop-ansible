@@ -1,0 +1,24 @@
+- name: Install Nginx
+  ansible.builtin.dnf:
+    - name: nginx
+      state: installed
+
+- name: Create application directiory
+  ansible.builtin.import_role:
+    name: common
+    import_task: app_content_cleanup
+
+- name: Donwload Frontend Content
+  ansible.builtin.import_role:
+    name: common
+    import_task: download_app_content
+
+- name: Copy Nginx configuration
+  ansible.builtin.template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+
+- name: Copy RoboShop configuration file
+  ansible.builtin.template:
+    src: robo-shop.conf
+    dest: /etc/nginx/conf.d/robo-shop.conf
