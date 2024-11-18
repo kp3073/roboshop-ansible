@@ -6,12 +6,12 @@
 - name: Include App Pre-clean tasks
   ansible.builtin.import_role:
     name: common
-    tasks_from: app-pre-clean
+    tasks_from: app_content_cleanup
 
 - name: Download App Content
   ansible.builtin.import_role:
     name: common
-    tasks_from: app-download
+    tasks_from: download_app_content
 
 - name: Copy Nginx Configuration
   ansible.builtin.template:
