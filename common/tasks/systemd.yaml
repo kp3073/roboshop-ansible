@@ -1,7 +1,7 @@
 - name: Copy SystemD file
   ansible.builtin.template:
     src: {{component}}.service
-    dest: /etc/systemd/system/{{catalogue}}.service
+    dest: /etc/systemd/system/{{component}}.service
 
 - name: Restart {{component}} Service files
   ansible.builtin.systemd:
