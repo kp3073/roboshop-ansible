@@ -6,11 +6,11 @@
     name: nodejs
     state: installed
 
-- name: Load App requisite
+- name: Load App  pre requisite
   ansible.builtin.import_tasks:
     file: app-prerqe.yaml
 
-- name: Npm install
+- name: Npm install dependencies
   ansible.builtin.shell: npm install
   args:
     chdir: /app
