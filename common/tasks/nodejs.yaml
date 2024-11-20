@@ -19,6 +19,6 @@
   ansible.builtin.import_tasks:
     file: systemd.yaml
 
-- name: SystemD setup
+- name: Load schema
   ansible.builtin.import_tasks:
     file: mongo-schema.yaml
