@@ -3,13 +3,3 @@
     name: common
     tasks_from: nodejs
 
-- name: Download Application Code
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: app-prerqe
-
-- name: Copy Catalogue Service files
-  ansible.builtin.template:
-    src: catalogue.service
-    dest: /etc/systemd/system/catalogue.service
-
