@@ -1,0 +1,20 @@
+- name: Enable/Disable Nodejs Old Version
+  ansible.builtin.shell: dnf module disable nodejs -y ; dnf module enable nodejs:18 -y
+
+- name: Enable/Disable Nodejs Old Version
+  ansible.builtin.dnf:
+    name: nodejs
+    state: installed
+
+- name: Load App requisite
+  ansible.builtin.import_tasks:
+    file: app-prerqe.yaml
+
+- name: Npm install
+  ansible.builtin.shell: npm install
+  args:
+    chdir: /app
+
+- name: SystemD setup
+  ansible.builtin.import_tasks:
+    file: systemd.yaml

@@ -1,0 +1,10 @@
+- name: Copy SystemD file
+  ansible.builtin.template:
+    src: {{ catalogue }}.service
+    dest: /etc/systemd/system/{{catalogue}}.service
+
+- name: Restart {{Catalogue}} Service files
+  ansible.builtin.systemd:
+    name: {{catalogue}}
+    state: restart
+    daemon-reload: yes
