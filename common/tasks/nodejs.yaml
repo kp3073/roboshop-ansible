@@ -21,4 +21,5 @@
 
 - name: Load schema files
   ansible.builtin.import_tasks:
-    file: mongo-schema.yaml
+    file: schema.yaml
+  when: is_schema_needed
