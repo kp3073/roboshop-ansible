@@ -12,7 +12,7 @@
         state: installed
     
     - name: load schema
-      ansible.builtin.shell: mongo --host {{ lookup('amazon.aws.aws_ssm', '{{env}}.roboshop.{{component}}.mongodb_ENDPOINT', region='us-east-1' ) }} </app/schema/{{component}}.json
+      ansible.builtin.shell: mongo --host {{ lookup('amazon.aws.aws_ssm', '{{env}}.roboshop.catalogue.mongodb_ENDPOINT', region='us-east-1' ) }} </app/schema/{{component}}.json
 
 - name: My sql schema
   when: schema_type == "mysql"
