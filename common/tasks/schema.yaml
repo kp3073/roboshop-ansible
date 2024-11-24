@@ -23,4 +23,4 @@
         state: installed
     
     - name: Load MySQL schema
-      ansible.builtin.shell: mysql -h {{ lookup('amazon.aws.aws_ssm', '{{env}}.roboshop.{{component}}.DB_HOST', region='us-east-1' ) }} -u{{ lookup('amazon.aws.aws_ssm', '{{env}}.roboshop.shipping.DB_USERNAME', region='us-east-1' ) }} -p{{ lookup('amazon.aws.aws_ssm', '{{env}}.roboshop.mysql.DB_PASS', region='us-east-1' ) }} < /app/schema/{{component}}.sql
+      ansible.builtin.shell: mysql -h {{ lookup('amazon.aws.aws_ssm', '{{env}}.roboshop.{{component}}.DB_HOST', region='us-east-1' ) }} -u{{ lookup('amazon.aws.aws_ssm', '{{env}}.roboshop.{{component}}.DB_USERNAME', region='us-east-1' ) }} -p{{ lookup('amazon.aws.aws_ssm', '{{env}}.roboshop.mysql.DB_PASS', region='us-east-1' ) }} < /app/schema/{{component}}.sql
