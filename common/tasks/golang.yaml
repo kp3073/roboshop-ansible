@@ -8,7 +8,7 @@
     file: app-prerqe.yaml
 
 - name: python dependencies
-  ansible.builtin.shell:go mod init {{component}} ; go get ; go build
+  ansible.builtin.shell: go mod init {{component}} ; go get ; go build
   args:
     chdir: /app
 
